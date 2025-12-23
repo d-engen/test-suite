@@ -1,12 +1,12 @@
-# L03 - Unit-tester (del II)
+# L03 - Unittester (del II)
 
 ## Dagordning
-* Skapande av unit-tester för en serial-driver.
+* Skapande av unittester för en serial-driver.
 * Användning av trådar för att simulera samtidig hårdvaruaktivitet.
 * Korrigering av eventuella buggar.
 
 ## Mål med lektionen
-* Kunna skriva unit-tester för en UART-baserad serial-driver.
+* Kunna skriva unittester för en UART-baserad serial-driver.
 * Kunna använda Google Test-ramverket för att skriva testfall.
 * Förstå hur man använder en virtuell hårdvaruplattform för att testa hårdvarunära kod.
 * Kunna använda `std::thread` för att simulera samtidig hårdvaruaktivitet.
@@ -66,4 +66,4 @@ make
 * Några övriga synpunkter på lektionen?
 
 ## Nästa lektion
-* Unit-tester för en timer-driver.
+* Unittester för en timer-driver.

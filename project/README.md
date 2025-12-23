@@ -175,8 +175,8 @@ Denna klass orkestrerar flera drivrutiner för att implementera systemets huvudl
 * EEPROM-persistens.
 
 **Testansats**:
-* Skapa och använd stub-klasser för alla drivrutiner (GPIO, Timer, Watchdog, Serial, EEPROM, TempSensor).
-* Stub-klasserna ska ärva från respektive interface och implementera enkel testbar logik.
+* Skapa och använd stubklasser för alla drivrutiner (GPIO, Timer, Watchdog, Serial, EEPROM, TempSensor).
+* Stubklasserna ska ärva från respektive interface och implementera enkel testbar logik.
 * Testa att initialisering fungerar korrekt med både giltiga och ogiltiga konfigurationer.
 * Verifiera knapphantering och debounce-logik.
 * Kontrollera LED-toggling via timers.
@@ -184,10 +184,10 @@ Denna klass orkestrerar flera drivrutiner för att implementera systemets huvudl
 * Validera EEPROM-läsning och skrivning.
 * Testa watchdog reset-funktionalitet.
 
-**Stub-implementationer**: Se befintliga stub-klasser i `library/include/driver/*/stub.h` som referens för hur stub-klasser ska utformas.
+**Stub-implementationer**: Se befintliga stubklasser i `library/include/driver/*/stub.h` som referens för hur stubklasser ska utformas.
 
-**Viktiga aspekter för stub-klasser**:
-* Stub-klasser ska ärva från respektive interface-klass.
+**Viktiga aspekter för stubklasser**:
+* Stubklasser ska ärva från respektive interface-klass.
 * Implementera all funktionalitet som krävs för att testa logic-klassen.
 * Använd enkla interna variabler för att spåra tillstånd (t.ex. pin-värden, timer-status).
 * Tillhandahåll metoder för att verifiera att korrekta operationer utfördes.
@@ -271,7 +271,7 @@ För varje icke-automatiserbar test ska du dokumentera:
 
 ### Verktyg och ramverk
 * **Google Test**: För enhetstester och komponenttester.
-* **Stub-klasser**: Egenimplementerade stub-klasser (ej Google Mock) för att simulera hårdvara.
+* **Stubklasser**: Egenimplementerade stubklasser (ej Google Mock) för att simulera hårdvara.
 * **GCC/G++**: C++17 eller senare.
 * **Make**: För build automation.
 * **WSL (Windows Subsystem for Linux)**: Utvecklings- och testmiljö (Ubuntu rekommenderas).
@@ -363,12 +363,12 @@ git clone git@github.com:ditt-användarnamn/ditt-repo.git
 
 ### Fas 2: Enhetstester
 2. Implementera tester enligt kraven ovan.
-3. Använd befintliga unit-tester som referens (ADC, EEPROM, GPIO samt Watchdog).
+3. Använd befintliga unittester som referens (ADC, EEPROM, GPIO samt Watchdog).
 4. Kör tester kontinuerligt (`make` i `library/test/`).
 5. Dokumentera alla testfall och deras syfte.
 
 ### Fas 3: Komponenttester
-1. Granska befintliga stub-klasser i `library/include/driver/*/stub.h`.
+1. Granska befintliga stubklasser i `library/include/driver/*/stub.h`.
 2. Granska befintliga komponenttester för logic-implementation.
 3. Komplettera med ytterligare testfall om nödvändigt.
 4. Verifiera att alla drivrutinsinteraktioner testas.
@@ -420,7 +420,7 @@ make clean
 
 ### Godkänd (G)
 * Tillägg av enhetstester för angivna komponenter implementerade och fungerande.
-* Väl utformade stub-klasser som korrekt simulerar hårdvarabeteende.
+* Väl utformade stubklasser som korrekt simulerar hårdvarabeteende.
 * Komponenttester för logik-implementationen implementerade och fungerande.
 * Dokumentation av minst 5 icke-automatiserbara tester.
 * Kod följer projektets stilguide.

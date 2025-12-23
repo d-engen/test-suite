@@ -1,14 +1,14 @@
-# L04 - Unit-tester (del III)
+# L04 - Unittester (del III)
 
 ## Dagordning
-* Skapande av unit-tester för en timer-driver.
+* Skapande av unittester för en timer-driver.
 * Simulering av interrupt-driven hårdvara.
 * Korrigering av eventuella buggar.
 
 ## Mål med lektionen
-* Kunna skriva unit-tester för en interrupt-driven timer-driver.
+* Kunna skriva unittester för en interrupt-driven timer-driver.
 * Kunna använda Google Test-ramverket för att skriva testfall.
-* Förstå hur man simulerar interrupt-baserad hårdvara i unit-tester.
+* Förstå hur man simulerar interrupt-baserad hårdvara i unittester.
 * Förstå callback-mekanismen och hur timers interagerar med hårdvaruinterrupt.
 * Kunna testa olika scenarion såsom:
   * Initialisering av timers och resurshantering.
@@ -31,7 +31,7 @@
 * Observera att timer-drivern är interrupt-driven:
   * ATmega328P har tre hårdvaru-timer-kretsar (Timer0, Timer1, Timer2).
   * `handleCallback()` simulerar ett timer-interrupt - den ökar räknaren och anropar callback vid timeout.
-  * I unit-tester anropar vi `handleCallback()` manuellt istället för att vänta på riktiga interrupts.
+  * I unittester anropar vi `handleCallback()` manuellt istället för att vänta på riktiga interrupts.
 
 ### Skriva tester
 * Öppna testfilen [atmega328p_test.cpp](../../library/test/driver/timer/atmega328p_test.cpp).
@@ -69,4 +69,4 @@ make
 
 ## Nästa lektion
 * Introduktion till komponenttester.
-* Skapande av stub-klasser för att testa högre komponenter i isolering.
+* Skapande av stubklasser för att testa högre komponenter i isolering.

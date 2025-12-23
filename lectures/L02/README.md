@@ -1,11 +1,11 @@
-# L02 - Unit-tester (del I)
+# L02 - Unittester (del I)
 
 ## Dagordning
-* Skapande av unit-tester för en GPIO-driver.
+* Skapande av unittester för en GPIO-driver.
 * Korrigering av eventuella buggar.
 
 ## Mål med lektionen
-* Kunna skriva unit-tester för en hårdvarudrivrutin (GPIO-driver).
+* Kunna skriva unittester för en hårdvarudrivrutin (GPIO-driver).
 * Kunna använda Google Test-ramverket för att skriva testfall.
 * Förstå hur man använder en virtuell hårdvaruplattform för att testa hårdvarunära kod.
 * Kunna testa olika scenarion såsom:
@@ -54,4 +54,4 @@ make
 * Några övriga synpunkter på lektionen?
 
 ## Nästa lektion
-* Unit-tester för en serial-driver.
+* Unittester för en serial-driver.

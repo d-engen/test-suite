@@ -1,22 +1,22 @@
 # L05 - Komponenttester (del I)
 
 ## Dagordning
-* Introduktion till komponenttester och skillnaden mot unit-tester.
+* Introduktion till komponenttester och skillnaden mot unittester.
 * Inspektion av befintliga stub-implementationer.
 * Demonstration: Skapande av en stub-klass för GPIO-drivern.
-* Implementering av egna stub-klasser.
+* Implementering av egna stubklasser.
 
 ## Mål med lektionen
-* Förstå skillnaden mellan unit-tester och komponenttester.
-* Förstå syftet med stub-klasser och när de ska användas.
+* Förstå skillnaden mellan unittester och komponenttester.
+* Förstå syftet med stubklasser och när de ska användas.
 * Kunna analysera befintliga stub-implementationer.
-* Kunna skapa egna stub-klasser som implementerar drivrutins-interface.
+* Kunna skapa egna stubklasser som implementerar drivrutins-interface.
 * Förstå hur man ersätter hårdvaruberoenden med kontrollerbara stub-implementationer.
-* **Huvudmål**: Implementera en första version av alla stub-klasser så att komponentester för systemlogiken i
+* **Huvudmål**: Implementera en första version av alla stubklasser så att komponentester för systemlogiken i
 [logic_test.cpp](../../library/test/logic/logic_test.cpp) kan kompilera (även om testerna inte nödvändigtvis går igenom).
 
 ## Förutsättningar
-* Genomgång av L01-L04 och förståelse för unit-tester.
+* Genomgång av L01-L04 och förståelse för unittester.
 * Bekantskap med Google Test-ramverket.
 * Förståelse för interface-baserad design och polymorfism i C++.
 
@@ -31,7 +31,7 @@
   * [logic::Stub](../../library/include/logic/stub.h) (denna klass är ett specialfall och används 
   specifikt för att göra vissa delar av logikklassen åtkomliga just för testning)
 
-* Observera hur stub-klasser:
+* Observera hur stubklasser:
   * Implementerar samma interface som den riktiga drivrutinen.
   * Ger kontrollerbara, förutsägbara svar istället för att interagera med hårdvara.
   * Tillåter testning av högre komponenter i isolering.
@@ -43,10 +43,10 @@
 * Notera hur stub-klassen implementerar interface-metoderna.
 * Se hur stub-klassen används i komponenttester.
 
-### Implementera stub-klasser
-* Skapa en första version av alla stub-klasser så att [logic_test.cpp](../../library/test/logic/logic_test.cpp) kan kompilera.
+### Implementera stubklasser
+* Skapa en första version av alla stubklasser så att [logic_test.cpp](../../library/test/logic/logic_test.cpp) kan kompilera.
 
-* De stub-klasser som behöver implementeras för att komponenttesta systemlogiken är följande:
+* De stubklasser som behöver implementeras för att komponenttesta systemlogiken är följande:
   * [driver::gpio::Stub](../../library/include/driver/gpio/stub.h) (demonstration under lektionen)
   * [driver::tempsensor::Stub](../../library/include/driver/tempsensor/stub.h)
   * [driver::timer::Stub](../../library/include/driver/timer/stub.h)
@@ -65,13 +65,13 @@ make
 ```
 
 ## Utvärdering
-* Vad är den största skillnaden mellan unit-tester och komponenttester?
-* Varför behöver vi stub-klasser istället för att använda riktiga drivrutiner?
-* Vilka utmaningar uppstod när ni skapade stub-klasser?
-* Hur bidrar stub-klasser till bättre testbarhet och isolering?
+* Vad är den största skillnaden mellan unittester och komponenttester?
+* Varför behöver vi stubklasser istället för att använda riktiga drivrutiner?
+* Vilka utmaningar uppstod när ni skapade stubklasser?
+* Hur bidrar stubklasser till bättre testbarhet och isolering?
 * Vilka fördelar ser ni med interface-baserad design för testning?
 * Några övriga synpunkter på lektionen?
 
 ## Nästa lektion
-* Utveckling av befintliga stub-klasser så att befintliga komponenttester fungerar.
+* Utveckling av befintliga stubklasser så att befintliga komponenttester fungerar.
 * Tillägg av ytterligare komponenttester.

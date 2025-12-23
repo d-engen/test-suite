@@ -20,10 +20,10 @@
 ### Demonstration
 * En smart temperatursensor implementeras i helklass.
 * Tester skrivs för en linjär regressionsalgoritm i helklass.
-* Ni får möjlighet att skriva unit-tester för den smarta temperatursensorn.
+* Ni får möjlighet att skriva unittester för den smarta temperatursensorn.
 
 ## Utvärdering
 * Några synpunkter på lektionen i sig?
 
 ## Nästa lektion
-* Unit-tester för en GPIO-driver.
+* Unittester för en GPIO-driver.
