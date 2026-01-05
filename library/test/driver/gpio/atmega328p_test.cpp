@@ -4,7 +4,6 @@
 #include <cstdint>
 
 #include <gtest/gtest.h>
-#include <iostream>
 
 #include "arch/avr/hw_platform.h"
 #include "driver/gpio/atmega328p.h"
@@ -113,7 +112,7 @@ void runOutputTest(const std::uint8_t id, GpioRegs& regs) noexcept
 }
 
 // -----------------------------------------------------------------------------
-void runInputTest(const std::uint8_t pin, GpioRegs& regs) noexcept
+void runInputTest(const std::uint8_t id, GpioRegs& regs) noexcept
 {
     // Get the physical pin on the given port.
 
@@ -127,9 +126,9 @@ void runInputTest(const std::uint8_t pin, GpioRegs& regs) noexcept
         // Expect the internal pull-up resistor to be enabled, i.e., the corresponding bit in PORTx
         // should be set.
 
-        // Set the input high, expect the corresponding bit in PINx to be set.
+        // Set the input high in PINx, expect the GPIO input to be high.
 
-        // Set the input low, expect the corresponding bit in PINx to be cleared.
+        // Set the input low in PINx, expect the GPIO input to be low.
     }
     // Expect DDRx and PORTx to be cleared after the instance has been deleted.
 }
