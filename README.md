@@ -114,6 +114,26 @@ ls
 code .
 ```
 
+Om du inte kan öppna Visual Studio Code med felmeddelande `Exec format error code`, öpppna filen `/etc/wsl.conf` som root user:
+
+```bash
+sudo nano /etc/wsl.conf
+```
+
+Kommentera ut `systemd=true` såsom visas nedan:
+
+```bash
+[boot]
+#systemd=true
+```
+
+Öppna Powershell och starta om WSL:
+
+```bash
+wsl.exe --shutdown
+powershell.exe
+```
+
 ### Verifiera installationen
 
 Testa att kompilera och köra befintliga tester:
