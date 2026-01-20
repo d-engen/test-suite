@@ -296,4 +296,4 @@ uart = factory.create("COM3", use_stub)
 * Några övriga synpunkter på lektionen?
 
 ## Nästa lektion
-* Projektpresentationer och kursavslutning.
+* Slutförande av testsvit och kursavslutning.
