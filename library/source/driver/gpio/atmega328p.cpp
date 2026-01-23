@@ -219,7 +219,7 @@ Atmega328p::IoPort Atmega328p::getIoPort(const uint8_t id) const noexcept
     // Return the port associated with the given ID, or an invalid enum on failure.
     if (utils::inRange(id, Port::B0, Port::B5))      { return IoPort::B; }
     else if (utils::inRange(id, Port::C0, Port::C5)) { return IoPort::C; }
-    else if (utils::inRange(id, Port::D0, Port::D5)) { return IoPort::D; }
+    else if (utils::inRange(id, Port::D0, Port::D7)) { return IoPort::D; }
     return IoPort::Count;
 }
 
