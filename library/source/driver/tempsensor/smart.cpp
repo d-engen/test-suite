@@ -3,24 +3,17 @@
  */
 #include <stdint.h>
 
-//Inkludera ADc interface ml/lin_reg inteface och utility-funktioner
 #include "driver/adc/interface.h"       // Contains ADC interface.
 #include "driver/tempsensor/smart.h"    // Contains the smart sensor class.
-#include "ml/lin_reg/interface.h"       // Contains the liniar regression interface.
+#include "ml/lin_reg/interface.h"       // Contains the linear regression interface.
 #include "utils/utils.h"                // Contains a function to round numbers.
 
 namespace driver
 {
 namespace tempsensor
 {
-/**
- * @brief Smart temperature sensor implementation.
- */
-class Smart final : public Interface
-{
-public:
 //------------------------------------------------------------------------------
-Smart(uint8_t pin, adc::Interface& adc, ml::lin_reg::Interface& linReg) noexcept
+Smart::Smart(uint8_t pin, adc::Interface& adc, ml::lin_reg::Interface& linReg) noexcept
     : myAdc{adc}
     , myLinReg{linReg}
     , myPin{pin}
@@ -38,7 +31,7 @@ bool Smart::isInitialized() const noexcept
 }
 
 //------------------------------------------------------------------------------
-int16_t read() const noexcept
+int16_t Smart::read() const noexcept
 {
     // Read the tmeperature if the temp sensor is initialized.
     if (isInitialized())
@@ -54,7 +47,5 @@ int16_t read() const noexcept
     // Return 0 if the temp sensor isn't initialized.
     return 0;
 }
-
-};
 } // namespace tempsensor
 } // namespace driver

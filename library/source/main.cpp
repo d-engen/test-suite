@@ -139,9 +139,9 @@ int main()
     //!       Train the model and print the result. 
     if (trainModel(linReg))
     {
-        serial.printf("Temperature prediction training succeded!\n")
+        serial.printf("Temperature prediction training succeded!\n");
     }
-    else { serial.printf("Temperature prediction training failed!\n")}
+    else { serial.printf("Temperature prediction training failed!\n"); }
 
     // tempsensor::Smart tempSensor{tempSensorPin, adc, linReg};
     tempsensor::Smart tempSensor{tempSensorPin, adc, linReg};
