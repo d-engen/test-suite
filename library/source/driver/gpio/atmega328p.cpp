@@ -137,6 +137,9 @@ Atmega328p::Atmega328p(const uint8_t pin, const Direction direction, void (*call
 // -----------------------------------------------------------------------------
 Atmega328p::~Atmega328p() noexcept 
 {   
+    // Skip cleanup if the GPIO is uninitialized.
+    if (!isInitialized()) { return; }
+    
     // Free resources used for the GPIO before deletion.
     enableInterrupt(false);
     utils::clear(myHw->ddrx, myPin);
@@ -280,7 +283,10 @@ ISR(PCINT2_vect) { myCallbacks.invoke(CbIndex::PortD); }
 namespace
 {
 // -----------------------------------------------------------------------------
-constexpr bool isPinFree(const uint8_t id) noexcept { return PinCount > id; }
+constexpr bool isPinFree(const uint8_t id) noexcept 
+{ 
+    return PinCount > id ? !utils::read(myPinRegistry, id) : false;
+}
 
 // -----------------------------------------------------------------------------
 constexpr bool isDirectionValid(const Direction direction) noexcept
