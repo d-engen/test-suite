@@ -52,27 +52,44 @@ constexpr std::uint32_t getMaxCount(const std::uint32_t timeout_ms) noexcept
  */
 TEST(Timer_Atmega328p, Initialization)
 {
+    constexpr uint16_t timeout1_ms{10U};
+    constexpr uint16_t timeout2_ms{20U};
+    constexpr uint16_t timeout3_ms{30U};
+    constexpr uint16_t timeout4_ms{40U};
+
     // Case 1 - Verify that only MaxTimerCount (3) timers can be used simultaneously due to 
     //          hardware limitations.
     {
-        //! @todo Test timer initialization:
-            // Create MaxTimerCount timers with different timeouts.
-            uint16_t timer1{};
-            uint16_t timer2{timer.setTimeout_ms(150)};
-            uint16_t timer3{timer.setTimeout_ms(50)};
-            // Verify that each timer is initialized.
+        // Create MaxTimerCount timers with different timeouts.
+        timer::Atmega328p timer1{timeout1_ms};
+        timer::Atmega328p timer2{timeout2_ms};
+        timer::Atmega328p timer3{timeout3_ms};
 
-            // Create one additional timer.
-            // Verify that the additional timer isn't initialized, since no circuits are available.
+        // Verify that each timer is initialized.
+        EXPECT_TRUE(timer1.isInitialized());
+        EXPECT_TRUE(timer2.isInitialized());
+        EXPECT_TRUE(timer3.isInitialized());
+
+        // Create one additional timer.
+        timer::Atmega328p timer4{timeout4_ms};
+
+        // Verify that the additional timer isn't initialized, since no circuits are available.
+        EXPECT_FALSE(timer4.isInitialized());
     }
 
     // Case 2 - Verify that a timer cannot have a 0 ms timeout.
     {
         // Create a timer with a 100 ms timeout.
         // Verify that the timer is initialized.
+        constexpr uint16_t timeout1_ms{100U};
+        timer::Atmega328p timer1{timeout1_ms};
+        EXPECT_TRUE(timer1.isInitialized());
 
-        //  Create a timer with a 0 ms timeout.
+        // Create a timer with a 0 ms timeout.
         // Verify that the timer isn't initialized (0 ms is an invalid timeout).
+        constexpr uint16_t timeout2_ms{0U};
+        timer::Atmega328p timer2{timeout2_ms};
+        EXPECT_FALSE(timer2.isInitialized());
     }
 }
 
