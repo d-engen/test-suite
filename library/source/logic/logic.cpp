@@ -220,7 +220,7 @@ bool Logic::readSerialPort() noexcept
     constexpr uint16_t bufferSize{5U};
 
     // Read timeout in milliseconds.
-    constexpr readTimeout_ms{100U};
+    constexpr uint16_t readTimeout_ms{100U};
 
     // Read buffer (to recieve data as bytes)
     uint8_t buffer[bufferSize]{};
