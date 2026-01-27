@@ -43,6 +43,8 @@ public:
      * @return The temperature in degrees Celsius.
      */
     int16_t read() const noexcept override { return temperature; }
+    
+    void setTemp(int16_t sTemp) const noexcept {  sTemp = temperature; }
 
     Stub(const Stub&)            = delete; // No copy constructor.
     Stub(Stub&&)                 = delete; // No move constructor.
