@@ -90,7 +90,7 @@ void readDataRegThread(const std::string& msg, const bool& stop) noexcept
         while (utils::read(UCSR0A, UDRE0) && !stop) { delay_us(TransmissionDelay_us); }
 
         // If stop flag is set, break out of the loop.
-
+        if (stop) { break; }
         // Read the character from UDR0 and verify it matches the expected character.
         
         // Set UDRE0 to signal that the data has been read and the register is empty.
